@@ -3,7 +3,19 @@ version: "3"
 services:
   zoo-backend:
     build: "./zoo-backend"
+    volumes:
+      - ./zoo-backend/:/usr/src/app/
+    command: "python ./app/start_server.py"    
   zoo-frontend:
     build: "./zoo-frontend"
+    volumes:
+      - ./zoo-frontend/:/usr/src/app/
   zoo-proxy:
-    build: "./zoo-proxy"
+    image: "nginx"
+    restart: "always"
+    ports:
+     - "80:80"
+     - "443:443"
+    volumes:
+     - ./zoo-proxy/nginx/:/etc/nginx/sites-enabled/
+    command: nginx
