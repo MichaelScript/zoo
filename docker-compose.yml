@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  zoo-backend:
+    build: "./zoo-backend"
+  zoo-frontend:
+    build: "./zoo-frontend"
+  zoo-proxy:
+    build: "./zoo-proxy"

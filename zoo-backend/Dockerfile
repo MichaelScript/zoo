@@ -1,8 +1,12 @@
-FROM    ubuntu:16.04
+FROM python:3
 
 MAINTAINER Michael Green
 
-RUN    apt-get -y -q update
-RUN    apt-get -y -q upgrade
+WORKDIR /usr/src/app
 
-RUN    apt-get install -y -q python2.7-dev python2.7-numpy python-pip python3-pip
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+CMD ["python", "./app/start_server.py"]
