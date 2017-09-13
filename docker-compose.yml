@@ -8,11 +8,6 @@ services:
     volumes:
       - ./zoo-backend/python:/usr/src/app/
     command: "python ./start_server.py"
-  zoo-frontend:
-    container_name: "zoo-frontend"
-    build: "./zoo-frontend"
-    volumes:
-      - ./zoo-frontend/:/usr/src/app/
   zoo-proxy:
     image: nginx
     container_name: "zoo-proxy"
@@ -22,4 +17,5 @@ services:
       - zoo-backend-python:zoo-backend-python
     volumes:
      - ./zoo-proxy/nginx/:/etc/nginx/
+     - ./zoo-frontend/app/:/usr/src/app/
     tty: true
