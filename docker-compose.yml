@@ -1,12 +1,12 @@
 version: "3"
 
 services:
-  zoo-backend:
-    build: "./zoo-backend"
+  zoo-backend-python:
+    build: "./zoo-backend/python"
     restart: "always"
     volumes:
-      - ./zoo-backend/:/usr/src/app/
-    command: "python ./app/start_server.py"
+      - ./zoo-backend/python:/usr/src/app/
+    command: "python ./start_server.py"
     ports:
       - 6666:6666
     expose:
@@ -21,7 +21,7 @@ services:
      - "80:80"
      - "443:443"
     links:
-      - zoo-backend:zoo-backend
+      - zoo-backend-python:zoo-backend-python
     volumes:
      - ./zoo-proxy/nginx/:/etc/nginx/sites-enabled/
     command: nginx
