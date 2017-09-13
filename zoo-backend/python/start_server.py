@@ -13,7 +13,7 @@ class Animals(Resource):
         	"age":"1337"
         }
 
-api.add_resource(Animals,"/animals/")
+api.add_resource(Animals,"/")
 
 def main():
     app.run(host='0.0.0.0',port=6666,debug=True)
