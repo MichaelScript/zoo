@@ -9,13 +9,12 @@ services:
       - ./zoo-backend/python:/usr/src/app/
     command: "python ./start_server.py"
   zoo-proxy:
-    image: nginx
+    build: "./zoo-proxy/"
     container_name: "zoo-proxy"
     ports:
      - 80:80
     links:
       - zoo-backend-python:zoo-backend-python
     volumes:
-     - ./zoo-proxy/nginx/:/etc/nginx/
      - ./zoo-frontend/app/:/usr/src/app/
     tty: true
