@@ -1,11 +1,18 @@
 {
   "name": "zoo-frontend",
   "version": "1.0.0",
-  "description": "frontend for cs 532 project",
   "main": "index.tsx",
-  "author": "mymaout",
+  "author": "myamout",
   "license": "MIT",
-  "scripts": {},
+  "dependencies": {
+    "@types/react": "^16.0.5",
+    "@types/react-dom": "^15.5.4",
+    "@types/react-router-dom": "^4.0.7",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-router-dom": "^4.2.2",
+    "wingcss": "^1.0.0-beta"
+  },
   "devDependencies": {
     "awesome-typescript-loader": "^3.2.3",
     "css-loader": "^0.28.7",
@@ -16,12 +23,5 @@
     "tslint-react": "^3.2.0",
     "typescript": "^2.5.2",
     "webpack": "^3.6.0"
-  },
-  "dependencies": {
-    "@types/react": "^16.0.5",
-    "@types/react-dom": "^15.5.4",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "wingcss": "^1.0.0-beta"
   }
 }
