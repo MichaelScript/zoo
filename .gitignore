@@ -8,6 +8,10 @@ __pycache__/
 # C extensions
 *.so
 
+#Front-end stuff
+zoo-frontend/app/node_modules/
+zoo-frontend/app/yarn.lock
+
 # Distribution / packaging
 .Python
 build/
