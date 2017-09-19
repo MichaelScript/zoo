@@ -18,3 +18,9 @@ services:
     volumes:
      - ./zoo-frontend/app/:/usr/src/app/
     tty: true
+  zoo-frontend:
+    container_name: "zoo-frontend"
+    build: "./zoo-frontend"
+    volumes:
+      - ./zoo-frontend/app/:/usr/src/app/
+
