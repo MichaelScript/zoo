@@ -23,4 +23,5 @@ services:
     build: "./zoo-frontend"
     volumes:
       - ./zoo-frontend/app/:/usr/src/app/
+    tty: true
 

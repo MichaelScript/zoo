@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node
 
 MAINTAINER Matthew Yamout
 
@@ -7,6 +7,7 @@ WORKDIR /usr/src/app
 
 RUN npm install yarn
 #Install dependencies
-COPY app/. .
-RUN yarn
-CMD ["yarn", "webpack"]
+COPY app/package.json .
+RUN yarn install
+RUN yarn global add webpack
+# CMD ["webpack"]
